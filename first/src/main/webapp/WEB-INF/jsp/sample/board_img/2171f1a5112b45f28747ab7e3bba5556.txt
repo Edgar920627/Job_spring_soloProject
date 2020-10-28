@@ -1,0 +1,32 @@
+-전자정부이클립스 설치 3.9 버전
+
+-파일 움기고
+
+-오라클 셋팅
+globals.properties 
+pom 
+contenx-datasource.xml 
+lib 오라클.jar 복붙
+
+-톰캣
+톰캣 실행 타입 500초 변경
+globals.properties  
+	OS 변경
+	오라클 변경
+
+오라클 Developer 데이터 스크립
+
+-로그인
+http://localhost:8089/egov/
+
+기업 ID / PW
+
+webmaster
+rhdxhd12
+
+구분		ID		PW		비고
+업무사용자	TEST1		rhdxhd12		영문으로 공통12
+		webmaster	rhdxhd12		영문으로 공통12
+일반사용자	USER		rhdxhd12		영문으로 공통12
+기업사용자	ENTERPRISE	rhdxhd12		영문으로 공통12
+

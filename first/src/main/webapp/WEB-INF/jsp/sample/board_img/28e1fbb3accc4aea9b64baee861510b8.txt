@@ -1,0 +1,72 @@
+오라클 접속
+
+접속 : sqlplus hr hr
+종료 : quit;
+
+
+// 오라클 계정 생성 및 권한 설정
+SQL> create user tester identified by 1234;
+
+User created.
+
+SQL> grant connect, resource to tester;
+
+Grant succeeded.
+
+SQL> conn tester/1234;
+Connected.
+SQL>
+
+tester/1234;
+
+
+
+
+
+
+1. 데이터 조회
+ 1) SELECT * FROM USERS ;
+ 2) SELECT USERNO,EMAIL,PWD,NAME,PNO,ADDRESS FROM USERS;
+ 3) SELECT NAME AS 이름,EMAIL 이메일 FROM USER;   --이름 변경(뷰)
+ 4) SELECT * FROM USERS 
+  WHERE USERNO<10 AND USERNO>0;
+ 5) SELECT * FROM USERS
+  ORDER BY USERNO ASC;                            --DESC(내림차순),ASC(오름차순) DEFAULT: ASC
+ 6) SELECT * FROM
+  ORDER BY DBMS_RANDOM.VALUE;                  --랜덤정렬
+ 7) SELECT COUNT(*) FROM USERS;                        --ROW 갯수 출력
+ 8) SELECT NAME,ROWNUM FROM USERS;                --열번호 출력
+
+2. 데이터 삽입
+
+ --컬럼명을 명시 해주는 것을 추천 (2)
+ 1) INSERT INTO USERS
+  VALUES (USERS_SEQ.NEXTVAL,'GUEST','1234','손님','11111111111','서울역');
+
+ 2) INSERT INTO USERS(USERSNO,EMAIL,PWD,NAME,PNO)
+  VALUES (USER_SEQ.NEXTVAL,'GUEST2','1234','손님2','11111111111');
+
+3. 데이터 수정
+ 1) UPDATE USERS
+  SET EMAIL='GUEST3',NAME='손님3'
+  WHERE EMAIL='GUEST2' AND NAME='손님2';
+
+4. 데이터 삭제
+ 1) DELETE FROM USERS
+  WHERE EMAIL='GUEST3';
+
+ 2) TRUNCATE TABLE USERS;  -- 롤백 불가능. 사용 시 유의
+
+
+
+
+
+
+
+
+
+insert into jsp_member
+    values (
+    '1',
+    '1',
+    '1',
